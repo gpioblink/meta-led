@@ -1,41 +1,32 @@
-This README file contains information on the contents of the meta-led layer.
+# WIP: meta-led
 
-Please see the corresponding sections below for details.
+This layer enable led function for "meta-licheepinano".
 
-Dependencies
-============
+## how to use
 
-  URI: <first dependency>
-  branch: <branch name>
+In your build directory, add following line to the bottom of "bblayers.conf" file.
 
-  URI: <second dependency>
-  branch: <branch name>
+Line `/opt/nanowork/yocto/poky/meta-led` added.
 
-  .
-  .
-  .
+```
+BBLAYERS ?= " \
+  /opt/nanowork/yocto/poky/meta-licheepinano \
+  /opt/nanowork/yocto/build/licheepinano/workspace \
+  /opt/nanowork/yocto/poky/meta-led \
+  "
+```a
 
-Patches
-=======
+Then, in your poky directory, add machine config for "meta-licheepinano/conf/machine/licheepinano-sdcard.conf".
 
-Please submit any patches against the meta-led layer to the xxxx mailing list (xxxx@zzzz.org)
-and cc: the maintainer:
+Change line `MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS = " kernel-modules"` to `MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS = " kernel-modules kernel-module-hello"`
 
-Maintainer: XXX YYYYYY <xxx.yyyyyy@zzzzz.com>
+```
 
-Table of Contents
-=================
+MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS = " kernel-modules kernel-module-hello"
+MACHINE_ESSENTIAL_EXTRA_RDEPENDS = "kernel-image kernel-devicetree"
 
-  I. Adding the meta-led layer to your build
- II. Misc
+```
+
+After that, just execute "bitbake core-image-minimal". If you burn the generated image to the sdcard, you can see "hello" kernel module.
 
 
-I. Adding the meta-led layer to your build
-=================================================
-
-Run 'bitbake-layers add-layer meta-led'
-
-II. Misc
-========
-
---- replace with specific information about the meta-led layer ---
