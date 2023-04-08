@@ -14,7 +14,7 @@ BBLAYERS ?= " \
   /opt/nanowork/yocto/build/licheepinano/workspace \
   /opt/nanowork/yocto/poky/meta-led \
   "
-```a
+```
 
 Then, in your poky directory, add machine config for "meta-licheepinano/conf/machine/licheepinano-sdcard.conf".
 
