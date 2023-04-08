@@ -4,6 +4,16 @@ This layer enable led function for "meta-licheepinano".
 
 ## how to use
 
+First, clone this repository to the poky directory like this,
+
+```
+gpioblink@gpioblink-lab2:/opt/nanowork/yocto/poky$ ls
+bitbake        LICENSE.GPL-2.0-only  meta-led           meta-qt5        oe-init-build-env  README.qemu
+contrib        LICENSE.MIT           meta-licheepinano  meta-selftest   README.hardware    scripts
+documentation  MEMORIAM              meta-openembedded  meta-skeleton   README.OE-Core
+LICENSE        meta                  meta-poky          meta-yocto-bsp  README.poky
+```
+
 In your build directory, add following line to the bottom of "bblayers.conf" file.
 
 Line `/opt/nanowork/yocto/poky/meta-led` added.
